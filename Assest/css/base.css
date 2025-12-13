@@ -1,0 +1,19 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #e7dedb;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* HEADINGS */
+h1, h2, h3 {
+  font-weight: 600;
+}

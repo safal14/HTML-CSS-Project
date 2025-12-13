@@ -1,0 +1,99 @@
+/* HEADER */
+.header__logo img {
+  height: 50px;
+}
+
+.header__menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.header__menu-item {
+  cursor: pointer;
+}
+
+.header__menu-item--active {
+  font-weight: bold;
+}
+
+/* HERO */
+.hero__title {
+  font-size: 60px;
+}
+
+.hero__title-highlight {
+  display: block;
+  font-weight: bold;
+}
+
+.hero__description {
+  margin: 20px 0;
+  max-width: 450px;
+}
+
+.hero__buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.hero__image img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* DISHES */
+.dishes__title {
+  margin-bottom: 30px;
+}
+
+.dishes__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* ABOUT */
+.about__image img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.about__title {
+  margin-bottom: 15px;
+}
+
+.about__text {
+  margin-bottom: 20px;
+}
+
+/* MENU */
+.menu__categories {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.menu__category {
+  cursor: pointer;
+}
+
+.menu__category--active {
+  font-weight: bold;
+}
+
+.menu__items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* FOOTER */
+.footer__title {
+  margin-bottom: 10px;
+}
+
+.footer__contact p {
+  margin-bottom: 5px;
+}

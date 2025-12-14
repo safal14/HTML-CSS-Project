@@ -1,9 +1,10 @@
-/* BUTTONS */
+/* ================= BUTTONS ================= */
 .button {
   padding: 12px 22px;
   border-radius: 20px;
   border: none;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .button--primary {
@@ -16,21 +17,38 @@
   color: #fff;
 }
 
-/* CARDS */
+.button:hover {
+  transform: scale(1.05);
+}
+
+/* ================= CARDS ================= */
 .dish-card,
 .menu-card {
   background-color: #fff;
   padding: 15px;
-  border-radius: 15px;
+  border-radius: 18px;
   text-align: center;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.dish-card:hover,
+.menu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* CARD IMAGES FIX */
 .dish-card__image,
 .menu-card__image {
   width: 100%;
-  border-radius: 12px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 14px;
 }
 
+/* CARD BUTTONS */
 .dish-card__button,
 .menu-card__button {
   margin-top: 10px;
@@ -40,4 +58,10 @@
   background-color: #111;
   color: #fff;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.dish-card__button:hover,
+.menu-card__button:hover {
+  transform: scale(1.05);
 }

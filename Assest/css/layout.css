@@ -1,28 +1,33 @@
-/* HEADER */
+/* ================= HEADER ================= */
 .header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #e7dedb;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
+  padding: 18px 60px;
 }
 
-/* HERO & ABOUT GRID */
+/* ================= HERO & ABOUT ================= */
 .hero,
 .about {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 40px;
-  padding: 60px;
+  gap: 50px;
+  padding: 70px 60px;
 }
 
-/* SECTIONS PADDING */
+/* ================= SECTIONS ================= */
 .dishes,
 .menu {
-  padding: 60px;
+  padding: 70px 60px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .footer {
   background-color: #111;
   color: #fff;

@@ -1,35 +1,53 @@
-/* HEADER */
+/* ================= NAV ================= */
 .header__logo img {
-  height: 50px;
+  height: 100px;
 }
 
 .header__menu {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 32px;
 }
-
+.header__menu a{
+  text-decoration: none;
+}
 .header__menu-item {
   cursor: pointer;
+  position: relative;
+}
+
+.header__menu-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #111;
+  transition: width 0.3s ease;
+}
+
+.header__menu-item:hover::after {
+  width: 100%;
 }
 
 .header__menu-item--active {
   font-weight: bold;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero__title {
-  font-size: 60px;
+  font-size: 64px;
+  line-height: 1.1;
 }
 
 .hero__title-highlight {
   display: block;
-  font-weight: bold;
 }
 
 .hero__description {
-  margin: 20px 0;
-  max-width: 450px;
+  margin: 25px 0;
+  max-width: 480px;
 }
 
 .hero__buttons {
@@ -39,10 +57,12 @@
 
 .hero__image img {
   width: 100%;
-  border-radius: 20px;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 24px;
 }
 
-/* DISHES */
+/* ================= DISHES ================= */
 .dishes__title {
   margin-bottom: 30px;
 }
@@ -50,13 +70,13 @@
 .dishes__list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 30px;
 }
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 .about__image img {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 24px;
 }
 
 .about__title {
@@ -67,7 +87,7 @@
   margin-bottom: 20px;
 }
 
-/* MENU */
+/* ================= MENU ================= */
 .menu__categories {
   list-style: none;
   display: flex;
@@ -78,7 +98,6 @@
 .menu__category {
   cursor: pointer;
 }
-
 .menu__category--active {
   font-weight: bold;
 }
@@ -86,14 +105,14 @@
 .menu__items {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 30px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 .footer__title {
   margin-bottom: 10px;
 }
 
-.footer__contact p {
-  margin-bottom: 5px;
+.footer__text {
+  margin-bottom: 6px;
 }

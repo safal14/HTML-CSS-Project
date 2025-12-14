@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Italian Cuisine</title>
+    <link rel="icon" href="./Assest/Images/logo.png">
     <link rel="stylesheet" href="./Assest/css/base.css">
     <link rel="stylesheet" href="./Assest/css/section.css">
     <link rel="stylesheet" href="./Assest/css/components.css">
@@ -18,17 +19,17 @@
 
     <nav class="header__nav">
         <ul class="header__menu">
-            <li class="header__menu-item header__menu-item--active">Home</li>
-            <li class="header__menu-item">Drinks</li>
-            <li class="header__menu-item">Menu</li>
-            <li class="header__menu-item">About Us</li>
+            <li class="header__menu-item header__menu-item--active"> <a href="#home">Home</a></li>
+            <li class="header__menu-item"><a href="#">Drinks</a></li>
+            <li class="header__menu-item"><a href="#menu">Menu</a></li>
+            <li class="header__menu-item"><a href="#aboutus">About us</a></li>
         </ul>
     </nav>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero">
-    <div class="hero__content">
+    <div class="hero__content" id="home">
         <h1 class="hero__title">
             italian <span class="hero__title-highlight">Cuisine</span>
         </h1>
@@ -89,7 +90,7 @@
 </section>
 
 <!-- ================= ABOUT US ================= -->
-<section class="about">
+<section class="about" id="aboutus">
     <div class="about__image">
         <img src="./Assest/Images/aboutus.jpeg" alt="About Food">
     </div>
@@ -105,7 +106,7 @@
 </section>
 
 <!-- ================= MENU ================= -->
-<section class="menu">
+<section class="menu" id="menu">
     <h2 class="menu__title">Menu</h2>
 
     <ul class="menu__categories">
@@ -125,7 +126,7 @@
         </article>
 
         <article class="menu-card">
-            <img class="menu-card__image" src="./Assest/Images/whitepasta.jpeg" alt="White Pasta">
+            <img class="menu-card__image" src="./Assest/Images/cheesefries.jpeg" alt="White Pasta">
             <h3 class="menu-card__name">White Pasta</h3>
             <p class="menu-card__time">10 mins</p>
             <p class="menu-card__price">₹600</p>

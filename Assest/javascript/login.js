@@ -40,4 +40,17 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
  }
   
 });
-console.log(localStorage); 
+const toggleBtn = document.getElementById("themeToggle");
+
+// Apply saved theme on page load
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark");
+}
+
+// Toggle theme on button click
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
+  localStorage.setItem("theme", currentTheme);
+});

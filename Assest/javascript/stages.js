@@ -49,7 +49,6 @@ if (step2Form) {
     window.location.href = "step3.html";
   });
 }
-
 // ================= STEP 3 =================
 const step3Form = document.getElementById("step3Form");
 
@@ -67,15 +66,33 @@ if (step3Form) {
       skills
     }));
 
+    // ✅ Merge all step data
     const data = {
       ...JSON.parse(sessionStorage.getItem("step1")),
       ...JSON.parse(sessionStorage.getItem("step2")),
       ...JSON.parse(sessionStorage.getItem("step3"))
     };
 
-    console.log("Final Form Data:", data);
-    alert("Signup Completed Successfully ✅");
+    // ✅ Create readable alert message
+    const message = `
+Signup Details ✅
 
+Email: ${data.email}
+Gender: ${data.gender}
+
+Country: ${data.country}
+City: ${data.city}
+Address: ${data.address}
+
+Qualification: ${data.qualification}
+Skills: ${data.skills}
+    `;
+
+    alert(message);
+
+    console.log("Final Signup Data:", data);
+
+    // Optional cleanup
     sessionStorage.clear();
   });
 }

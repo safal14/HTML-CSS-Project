@@ -31,8 +31,13 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
     errors[2].textContent = "Please select a gender";
     valid = false;
   }
+ if (valid) {
+    localStorage.setItem("loggedIn", "true");       // Save login status
+    localStorage.setItem("email", email);          // Save email
+    localStorage.setItem("gender", gender.value);  // Save gender
 
-  if (valid) {
     alert("Login successful ✅");
-  }
+ }
+  
 });
+console.log(localStorage); 

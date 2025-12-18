@@ -23,7 +23,9 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
+a{
+    text-decoration: none;
+}
 /* Heading */
 .signup h3 {
   text-align: center;
@@ -41,7 +43,15 @@ body {
   border-radius: 5px;
   font-size: 14px;
 }
-
+#address, #country, #city{
+    margin-top: 10px;
+}
+textarea{
+    max-width: 100%;
+}
+button{
+    color: white;
+}
 /* Gender section */
 .signup div {
   margin-top: 15px;

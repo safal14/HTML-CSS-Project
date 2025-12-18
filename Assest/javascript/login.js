@@ -1,3 +1,4 @@
+
 const loginForm = document.getElementById("loginForm");
 
 const emailInput = loginForm.querySelector('[name="email"]');
@@ -46,14 +47,14 @@ loginForm.addEventListener("submit", function (e) {
   const isEmailValid = validateEmail();
   const isPasswordValid = validatePassword();
   const isGenderValid = validateGender(gender);
+if (isEmailValid && isPasswordValid && isGenderValid) {
 
-  if (isEmailValid && isPasswordValid && isGenderValid) {
-    localStorage.setItem("loggedIn", "true");
-    localStorage.setItem("email", email);
-    localStorage.setItem("gender", gender);
+  setCookie("loggedIn", "true", 1);   // 1 day session
+  setCookie("email", email, 1);
+  setCookie("gender", gender, 1);
 
-     window.location.href = "user.html";
-  }
+  window.location.href = "user.html";
+}
 });
 
 // ---------------- VALIDATION FUNCTIONS ----------------
@@ -101,4 +102,26 @@ function showSuccess(input, errorEl) {
   input.classList.remove("invalid");
   input.classList.add("valid");
   errorEl.textContent = "";
+}
+if (getCookie("loggedIn") === "true") {
+  window.location.href = "user.html";
+}
+
+function setCookie(name, value, days) {
+  const date = new Date();
+  date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+  document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+}
+
+function getCookie(name) {
+  const cookies = document.cookie.split("; ");
+  for (let cookie of cookies) {
+    const [key, value] = cookie.split("=");
+    if (key === name) return value;
+  }
+  return null;
+}
+
+function deleteCookie(name) {
+  document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
 }

@@ -52,16 +52,16 @@ heroHighlight.addEventListener("mouseout", function () {
 //     });
 // });
 
-// const heroSection = document.querySelector('.hero'); // or #hero
+const heroSection = document.querySelector('.hero'); // or #hero
 
-// function randomColor() {
-//     const r = Math.floor(Math.random() * 256);
-//     const g = Math.floor(Math.random() * 256);
-//     const b = Math.floor(Math.random() * 256);
-//     return `rgba(${r}, ${g}, ${b}, 0.1)`;
-// }
+function randomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+    return `rgba(${r}, ${g}, ${b}, 0.1)`;
+}
 
-// setInterval(() => {
-//     heroSection.style.backgroundColor = randomColor();
-// }, 3000);
+setInterval(() => {
+    heroSection.style.backgroundColor = randomColor();
+}, 3000);
 

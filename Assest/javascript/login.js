@@ -1,56 +1,57 @@
+const emailInput = document.getElementById("email");
+const passwordInput = document.getElementById("password");
+const genderInputs = document.querySelectorAll('input[name="gender"]');
 
-// login
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+const emailError = emailInput.nextElementSibling;
+const passwordError = passwordInput.nextElementSibling;
+const genderError = document.querySelector('.gender-options + .error');
 
-  const email = document.getElementById("email").value.trim();
-  const password = document.getElementById("password").value.trim();
-  const gender = document.querySelector('input[name="gender"]:checked');
+const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const passwordReg = /^(?=.*\d).{8,}$/;
 
-  const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const passwordReg = /^(?=.*\d).{8,}$/;
-
-  let valid = true;
-  const errors = document.querySelectorAll(".error");
-  errors.forEach(err => err.textContent = "");
-
-  // Email check
-  if (!emailReg.test(email)) {
-    errors[0].textContent = "Enter a valid email address";
-    valid = false;
+// 🔹 Email live validation
+emailInput.addEventListener("input", () => {
+  if (!emailReg.test(emailInput.value.trim())) {
+    showError(emailInput, emailError, "Invalid email format");
+  } else {
+    showSuccess(emailInput, emailError);
   }
-
-  // Password check
-  if (!passwordReg.test(password)) {
-    errors[1].textContent = "Password must be at least 8 characters & include a number";
-    valid = false;
-  }
-
-  // Gender check
-  if (!gender) {
-    errors[2].textContent = "Please select a gender";
-    valid = false;
-  }
- if (valid) {
-    localStorage.setItem("loggedIn", "true");       // Save login status
-    localStorage.setItem("email", email);          // Save email
-    localStorage.setItem("gender", gender.value);  // Save gender
-
-    alert("Login successful ✅");
- }
-  
 });
-const toggleBtn = document.getElementById("themeToggle");
 
-// Apply saved theme on page load
-if (localStorage.getItem("theme") === "dark") {
-  document.body.classList.add("dark");
+// 🔹 Password live validation
+passwordInput.addEventListener("input", () => {
+  if (!passwordReg.test(passwordInput.value.trim())) {
+    showError(
+      passwordInput,
+      passwordError,
+      "Min 8 chars & at least one number"
+    );
+  } else {
+    showSuccess(passwordInput, passwordError);
+  }
+});
+
+// 🔹 Gender validation (on change)
+genderInputs.forEach(radio => {
+  radio.addEventListener("change", () => {
+    if (document.querySelector('input[name="gender"]:checked')) {
+      genderError.classList.remove("show");
+    }
+  });
+});
+
+// ---------------- helper functions ----------------
+
+function showError(input, errorEl, message) {
+  input.classList.add("invalid");
+  input.classList.remove("valid");
+  errorEl.textContent = message;
+  errorEl.classList.add("show");
 }
 
-// Toggle theme on button click
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-
-  const currentTheme = document.body.classList.contains("dark") ? "dark" : "light";
-  localStorage.setItem("theme", currentTheme);
-});
+function showSuccess(input, errorEl) {
+  input.classList.remove("invalid");
+  input.classList.add("valid");
+  errorEl.textContent = "";
+  errorEl.classList.remove("show");
+}

@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>user page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Page</title>
 </head>
 <body>
-<h1>Hello User</h1>
-<p>It is just a simple user page and i am adding a image.</p>
-<img src="./Assest/Images/aboutus.jpeg" alt="">
-<button>log out</button>
+
+  <h1>Hello User</h1>
+  <p>It is just a simple user page and I am adding an image.</p>
+
+  <img src="./Assest/Images/aboutus.jpeg" alt="About us image">
+
+  <br><br>
+
+  <button id="logoutBtn">Log out</button>
+
+  <script>
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    logoutBtn.addEventListener("click", function () {
+      // clear login data
+      localStorage.removeItem("loggedIn");
+      localStorage.removeItem("email");
+      localStorage.removeItem("gender");
+
+      // redirect to login page
+      window.location.href = "login.html";
+    });
+  </script>
+
 </body>
 </html>

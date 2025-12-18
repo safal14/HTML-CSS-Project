@@ -91,8 +91,5 @@ Skills: ${data.skills}
     alert(message);
 
     console.log("Final Signup Data:", data);
-
-    // Optional cleanup
-    sessionStorage.clear();
   });
 }

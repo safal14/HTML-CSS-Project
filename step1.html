@@ -26,8 +26,45 @@
 <button type="submit">Next</button>
     <button id="button"><a href="INDEX.HTML">back</a></button>
 
+</form>
+    <form id="step2Form">
+  <h3>Step 2: Address</h3>
+
+  <input type="text" id="country" placeholder="Country" required>
+  <input type="text" id="city" placeholder="City" required>
+  <textarea id="address" placeholder="Address"></textarea>
+
+  <button type="submit">Next</button>
+  <button id="button" onclick="goToStep1()">Back</button>
+</form>
+
+<form id="step3Form">
+  <h3>Step 3: Qualification</h3>
+
+  <select id="qualification">
+    <option value="">Select</option>
+    <option value="SEE">SEE</option>
+    <option value="+2">+2</option>
+    <option value="Bachelor">Bachelor</option>
+  </select>
+
+  <input type="text" id="skills" placeholder="Skills (HTML, CSS, JS)">
+
+  <button type="submit">Submit</button>
+  <button id="button" onclick="goToStep1()">back</button>
+</form>
 </div>
-</div>
+<script>
+  function goToStep1() {
+  step2Form.style.display = "none";
+  step1Form.style.display = "block";
+}
+
+function goToStep2() {
+  step3Form.style.display = "none";
+  step2Form.style.display = "block";
+}
+</script>
 <script src="./Assest/javascript/stages.js"></script>
 
 </body>

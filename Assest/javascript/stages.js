@@ -1,95 +1,57 @@
-// ================= STEP 1 =================
+// ================= SELECT FORMS =================
 const step1Form = document.getElementById("step1Form");
-
-if (step1Form) {
-  step1Form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const email = document.getElementById("email").value.trim();
-    const password = document.getElementById("password").value.trim();
-    const gender = document.querySelector('input[name="gender"]:checked');
-
-    const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const passReg = /^(?=.*\d).{8,}$/;
-
-    if (!emailReg.test(email)) return alert("Invalid Email");
-    if (!passReg.test(password)) return alert("Weak Password");
-    if (!gender) return alert("Select gender");
-
-    sessionStorage.setItem("step1", JSON.stringify({
-      email,
-      password,
-      gender: gender.value
-    }));
-
-    window.location.href = "step2.html";
-  });
-}
-
-// ================= STEP 2 =================
 const step2Form = document.getElementById("step2Form");
-
-if (step2Form) {
-  step2Form.addEventListener("submit", function (e) {
-    e.preventDefault();
-
-    const country = document.getElementById("country").value.trim();
-    const city = document.getElementById("city").value.trim();
-    const address = document.getElementById("address").value.trim();
-
-    if (!country || !city || !address)
-      return alert("All fields are required");
-
-    sessionStorage.setItem("step2", JSON.stringify({
-      country,
-      city,
-      address
-    }));
-
-    window.location.href = "step3.html";
-  });
-}
-// ================= STEP 3 =================
 const step3Form = document.getElementById("step3Form");
 
-if (step3Form) {
-  step3Form.addEventListener("submit", function (e) {
-    e.preventDefault();
+// ================= INITIAL VIEW =================
+step1Form.style.display = "block";
+step2Form.style.display = "none";
+step3Form.style.display = "none";
 
-    const qualification = document.getElementById("qualification").value;
-    const skills = document.getElementById("skills").value.trim();
+// ================= STEP 1 → STEP 2 =================
+step1Form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    if (!qualification) return alert("Select qualification");
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const gender = document.querySelector('input[name="gender"]:checked');
 
-    sessionStorage.setItem("step3", JSON.stringify({
-      qualification,
-      skills
-    }));
+  if (!email || !password || !gender) {
+    alert("Please complete Step 1");
+    return;
+  }
 
-    // ✅ Merge all step data
-    const data = {
-      ...JSON.parse(sessionStorage.getItem("step1")),
-      ...JSON.parse(sessionStorage.getItem("step2")),
-      ...JSON.parse(sessionStorage.getItem("step3"))
-    };
+  step1Form.style.display = "none";
+  step2Form.style.display = "block";
+});
 
-    // ✅ Create readable alert message
-    const message = `
-Signup Details ✅
+// ================= STEP 2 → STEP 3 =================
+step2Form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-Email: ${data.email}
-Gender: ${data.gender}
+  const country = document.getElementById("country").value.trim();
+  const city = document.getElementById("city").value.trim();
 
-Country: ${data.country}
-City: ${data.city}
-Address: ${data.address}
+  if (!country || !city) {
+    alert("Please complete Step 2");
+    return;
+  }
 
-Qualification: ${data.qualification}
-Skills: ${data.skills}
-    `;
+  step2Form.style.display = "none";
+  step3Form.style.display = "block";
+});
 
-    alert(message);
+// ================= FINAL SUBMIT =================
+step3Form.addEventListener("submit", function (e) {
+  e.preventDefault();
 
-    console.log("Final Signup Data:", data);
-  });
-}
+  const qualification = document.getElementById("qualification").value;
+  const skills = document.getElementById("skills").value.trim();
+
+  if (!qualification || !skills) {
+    alert("Please complete Step 3");
+    return;
+  }
+
+  alert("Signup Successful 🎉");
+});

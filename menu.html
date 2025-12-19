@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="icon" href="./Assest/Images/logo.png">
+    <link rel="stylesheet" href="./Assest/css/base.css">
+    <link rel="stylesheet" href="./Assest/css/section.css">
+    <link rel="stylesheet" href="./Assest/css/components.css">
+    <link rel="stylesheet" href="./Assest/css/layout.css">
+</head>
+<body>
+    
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <div class="header__logo">
+        <img src="./Assest/Images/logo.png" alt="Street Food Logo">
+    </div>
+
+    <nav class="header__nav">
+        <ul class="header__menu">
+            <li class="header__menu-item header__menu-item--active"> <a href="./INDEX.HTML">Home</a></li>
+            <li class="header__menu-item"><a href="./menu.html">Menu</a></li>
+            <li class="header__menu-item"><a href="./aboutus.html">About us</a></li>
+        </ul>
+    </nav>
+</header>
+<!-- ================= MENU ================= -->
+<section class="menu" id="menu">
+    <h2 class="menu__title">Menu</h2>
+
+    <ul class="menu__categories">
+        <li class="menu__category menu__category--active">Dishes</li>
+        <li class="menu__category">Salad</li>
+        <li class="menu__category">Pasta</li>
+        <li class="menu__category">Drinks</li>
+    </ul>
+
+    <div class="menu__items">
+        <article class="menu-card">
+            <img class="menu-card__image" src="./Assest/Images/cheesefries.jpeg" alt="Cheese Fries">
+            <h3 class="menu-card__name">Cheese fries</h3>
+            <p class="menu-card__time">10 mins</p>
+            <p class="menu-card__price">₹500</p>
+            <button class="menu-card__button">Order Now</button>
+        </article>
+
+        <article class="menu-card">
+            <img class="menu-card__image" src="./Assest/Images/whitepasta.jpeg" alt="White Pasta">
+            <h3 class="menu-card__name">White Pasta</h3>
+            <p class="menu-card__time">10 mins</p>
+            <p class="menu-card__price">₹600</p>
+            <button class="menu-card__button">Order Now</button>
+        </article>
+
+        <article class="menu-card">
+            <img class="menu-card__image" src="./Assest/Images/frenchsalad.jpeg" alt="French Salad">
+            <h3 class="menu-card__name">French Salad</h3>
+            <p class="menu-card__time">10 mins</p>
+            <p class="menu-card__price">₹800</p>
+            <button class="menu-card__button">Order Now</button>
+        </article>
+
+        <article class="menu-card">
+            <img class="menu-card__image" src="./Assest/Images/sandwich.jpeg" alt="Sandwich">
+            <h3 class="menu-card__name">Sandwich</h3>
+            <p class="menu-card__time">10 mins</p>
+            <p class="menu-card__price">₹300</p>
+            <button class="menu-card__button">Order Now</button>
+        </article>
+    </div>
+</section>
+<footer class="footer">
+        <!-- Contact -->
+        <div class="footer__contact">
+            <h3 class="footer__title">Contact</h3>
+            <p class="footer__text">📍 Kathmandu, Nepal</p>
+            <p class="footer__text">📞 +977 9800000000</p>
+            <p class="footer__text">✉ info@italiancuisine.com</p>
+        </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer__bottom">
+        <p class="footer__copyright">
+            © 2025 Italian Cuisine. All rights reserved.
+        </p>
+    </div>
+</footer>
+</body>
+</html>

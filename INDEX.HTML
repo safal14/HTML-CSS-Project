@@ -19,10 +19,9 @@
 
     <nav class="header__nav">
         <ul class="header__menu">
-            <li class="header__menu-item header__menu-item--active"> <a href="#home">Home</a></li>
-            <li class="header__menu-item"><a href="#">Drinks</a></li>
-            <li class="header__menu-item"><a href="#menu">Menu</a></li>
-            <li class="header__menu-item"><a href="#aboutus">About us</a></li>
+            <li class="header__menu-item header__menu-item--active"> <a href="./INDEX.HTML">Home</a></li>
+            <li class="header__menu-item"><a href="./menu.html">Menu</a></li>
+            <li class="header__menu-item"><a href="./aboutus.html">About us</a></li>
         </ul>
     </nav>
 </header>
@@ -89,67 +88,7 @@
     </div>
 </section>
 
-<!-- ================= ABOUT US ================= -->
-<section class="about" id="aboutus">
-    <div class="about__image">
-        <img src="./Assest/Images/aboutus.jpeg" alt="About Food">
-    </div>
 
-    <div class="about__content">
-        <h2 class="about__title">About us</h2>
-        <p class="about__text">
-            Welcome to our Italian culinary haven, where tradition meets innovation
-            in every delicious bite.
-        </p>
-        <button class="button button--primary">Our Menu</button>
-    </div>
-</section>
-
-<!-- ================= MENU ================= -->
-<section class="menu" id="menu">
-    <h2 class="menu__title">Menu</h2>
-
-    <ul class="menu__categories">
-        <li class="menu__category menu__category--active">Dishes</li>
-        <li class="menu__category">Salad</li>
-        <li class="menu__category">Pasta</li>
-        <li class="menu__category">Drinks</li>
-    </ul>
-
-    <div class="menu__items">
-        <article class="menu-card">
-            <img class="menu-card__image" src="./Assest/Images/cheesefries.jpeg" alt="Cheese Fries">
-            <h3 class="menu-card__name">Cheese fries</h3>
-            <p class="menu-card__time">10 mins</p>
-            <p class="menu-card__price">₹500</p>
-            <button class="menu-card__button">Order Now</button>
-        </article>
-
-        <article class="menu-card">
-            <img class="menu-card__image" src="./Assest/Images/whitepasta.jpeg" alt="White Pasta">
-            <h3 class="menu-card__name">White Pasta</h3>
-            <p class="menu-card__time">10 mins</p>
-            <p class="menu-card__price">₹600</p>
-            <button class="menu-card__button">Order Now</button>
-        </article>
-
-        <article class="menu-card">
-            <img class="menu-card__image" src="./Assest/Images/frenchsalad.jpeg" alt="French Salad">
-            <h3 class="menu-card__name">French Salad</h3>
-            <p class="menu-card__time">10 mins</p>
-            <p class="menu-card__price">₹800</p>
-            <button class="menu-card__button">Order Now</button>
-        </article>
-
-        <article class="menu-card">
-            <img class="menu-card__image" src="./Assest/Images/sandwich.jpeg" alt="Sandwich">
-            <h3 class="menu-card__name">Sandwich</h3>
-            <p class="menu-card__time">10 mins</p>
-            <p class="menu-card__price">₹300</p>
-            <button class="menu-card__button">Order Now</button>
-        </article>
-    </div>
-</section>
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
         <!-- Contact -->
@@ -167,6 +106,20 @@
         </p>
     </div>
 </footer>
+<script>
+    const currentPath = window.location.pathname.split("/").pop();
+
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute("href");
+
+    if (linkPath === currentPath || 
+        (currentPath === "" && linkPath === "INDEX.html")) {
+      link.classList.add("active");
+    }
+  });
+</script>
 <script src="./Assest/javascript/script.js"></script>
 </body>
 </html>
